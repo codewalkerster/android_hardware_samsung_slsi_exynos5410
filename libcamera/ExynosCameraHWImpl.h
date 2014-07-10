@@ -720,14 +720,10 @@ private:
     int                 m_availableRecordingFrameCnt;
     Mutex               m_recordingFrameMutex;
 
-#ifdef CHECK_TIME_PREVIEW
     DurationTimer       m_previewTimer;
-#endif
     long long           m_previewTimerTime[CHECK_TIME_FRAME_DURATION];
     int                 m_previewTimerIndex;
-#ifdef CHECK_TIME_RECORDING
     DurationTimer       m_recordingTimer;
-#endif
     long long           m_recordingTimerTime[CHECK_TIME_FRAME_DURATION];
     int                 m_recordingTimerIndex;
 

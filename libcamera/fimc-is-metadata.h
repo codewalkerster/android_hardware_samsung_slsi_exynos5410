@@ -816,8 +816,9 @@ struct camera2_lens_uctl {
 	struct camera2_lens_ctl ctl;
 
 	/** It depends by af algorithm(AF pos bit. normally 8 or 9 or 10) */
-	uint32_t        maxPos;
+	uint32_t        posSize;
 	/** It depends by af algorithm */
+	uint32_t        direction;
 	/** Some actuator support slew rate control. */
 	uint32_t        slewRate;
 };
@@ -827,8 +828,9 @@ struct camera2_lens_uctl {
 */
 struct camera2_lens_udm {
 	/** It depends by af algorithm(AF pos bit. normally 8 or 9 or 10) */
-	uint32_t        maxPos;
+	uint32_t        posSize;
 	/** It depends by af algorithm */
+	uint32_t        direction;
 	/** Some actuator support slew rate control. */
 	uint32_t        slewRate;
 };

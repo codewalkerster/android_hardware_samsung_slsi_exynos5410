@@ -7689,7 +7689,6 @@ int ExynosCameraHWImpl::m_calibratePosition(int w, int new_w, int pos)
     return (float)(pos * new_w) / (float)w;
 }
 
-#ifdef CHECK_TIME_PREVIEW
 void ExynosCameraHWImpl::m_checkPreviewTime(void)
 {
     m_previewTimer.stop();
@@ -7714,7 +7713,6 @@ void ExynosCameraHWImpl::m_checkPreviewTime(void)
 
     m_previewTimer.start();
 }
-#endif
 
 bool ExynosCameraHWImpl::m_checkPictureBufferVaild(ExynosBuffer *buf, int retry)
 {
@@ -7743,7 +7741,6 @@ out:
     return ret;
 }
 
-#ifdef CHECK_TIME_RECORDING
 void ExynosCameraHWImpl::m_checkRecordingTime(void)
 {
     m_recordingTimer.stop();
@@ -7768,7 +7765,6 @@ void ExynosCameraHWImpl::m_checkRecordingTime(void)
 
     m_recordingTimer.start();
 }
-#endif
 
 void ExynosCameraHWImpl::m_pushVideoQ(ExynosBuffer *buf)
 {

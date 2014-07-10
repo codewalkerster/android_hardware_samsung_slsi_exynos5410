@@ -15,12 +15,15 @@
 #
 
 ifeq ($(TARGET_SOC),exynos5410)
-exynos5410_dirs := \
+common_exynos5410_dirs := \
 	libhwjpeg \
 	mobicore
 
-ifneq ($(BOARD_USE_USB_WEBCAM),true)
-exynos5410_dirs += libcamera 
+ifeq ($(TARGET_BOOTLOADER_BOARD_NAME),odroidxu)
+exynos5410_dirs := $(common_exynos5410_dirs)
+else
+camera_dirs := libcamera
+exynos5410_dirs := $(common_exynos5410_dirs) $(camera_dirs)
 endif
 
 include $(call all-named-subdir-makefiles,$(exynos5410_dirs))
